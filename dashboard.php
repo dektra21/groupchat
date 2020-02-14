@@ -302,19 +302,19 @@
         if (userid == data.sender) {
             var chat =
                 ' <div class="d-flex justify-content-end mb-4"> <p class="msg_cotainer"> ' + data.content +
-                ' </p></div><div style="margin-top:-25px;" align="right"> <span class="uk-text-meta livestamp"> <span data-livestamp=" ' +
+                ' </p></div><div style="margin-top:-25px;" align="right"> <span class="uk-text-meta livestamp"> <span data-livestamp="' +
                 data.msg_date +
-                ' " style="font-size:10px;"></span> <span uk-icon="icon: clock; ratio: .7"></span> </span> </div>';
+                '" style="font-size:10px;"></span> <span uk-icon="icon: clock; ratio: .7"></span> </span> </div>';
 
         } else {
             $('title').html('Ada pesan baru dari' + data.senderName);
-            var chat = ' <div style="margin-bottom:-15px;"> <p class="" style="color:black;"> ' + data
+            var chat = ' <div style="margin-bottom:-15px;"> <p class="" style="color:black; style="padding:9px;""> ' + data
                 .senderName +
                 ' </p></div><div class="d-flex justify-content-start mb-4"> <div class="img_cont_msg" style="padding-right:4px;"> <img src="assets/cover/' +
                 data.cover + '" class="rounded-circle user_img_msg"> </div><p class="msg_cotainer_send">' +
                 data.content +
-                '</p><br></div><div style="margin-top:-25px;"> <span class="uk-text-meta livestamp"> <span uk-icon="icon: clock; ratio: .7"></span> <span data-livestamp=" ' +
-                data.msg_date + ' " style="font-size:10px;"></span> </span> </div>';
+                '</p><br></div><div style="margin-top:-25px;"> <span class="uk-text-meta livestamp"> <span uk-icon="icon: clock; ratio: .7"></span> <span data-livestamp="' +
+                data.msg_date + '" style="font-size:10px;"></span> </span> </div>';
 
         }
         $('#loadmessage').append(chat);

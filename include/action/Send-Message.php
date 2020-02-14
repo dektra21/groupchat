@@ -5,7 +5,7 @@ session_start();
     require __DIR__ . '/../../vendor/autoload.php';
 
     $content = trim($_POST['content']);
-    $sender  = trim($_POST['sender']);
+    $sender  = $_SESSION['id'];
 
     $classMessages = new MessagesClass($pdo);
     $send = $classMessages->sendMessage(json_encode($_POST));

@@ -20,7 +20,7 @@
     $options
   );
 
-  $data['content'] = $userid->nickname . ' Lagi Ngetik';
+  $data['content'] = $userid->nickname . ' lagi ngetik...';
   $data['typer']   = $typer;
 
   $pusher->trigger('chat-typing', 'chat-typing', $data);
