@@ -57,9 +57,7 @@
             -webkit-filter: brightness(35%);
         }
 
-        .uk-icon{
-            
-        }
+        .uk-icon {}
     </style>
 </head>
 
@@ -102,8 +100,8 @@
                                              -->
                                         </div>
 
-                                        <div >
-                                            <span uk-icon="icon:more-vertical" 
+                                        <div>
+                                            <span uk-icon="icon:more-vertical"
                                                 style="color:white; background:transparent;"></span>
                                             <div uk-dropdown>
                                                 <ul class="uk-nav uk-dropdown-nav" style="padding-right:50px;">
@@ -308,13 +306,20 @@
 
         } else {
             $('title').html('Ada pesan baru dari' + data.senderName);
-            var chat = ' <div style="margin-bottom:-15px;"> <p class="" style="color:black; style="padding:9px;""> ' + data
+            var chat =
+                ' <div style="margin-bottom:-15px;"> <p class="" style="color:black; style="padding:9px;""> ' +
+                data
                 .senderName +
                 ' </p></div><div class="d-flex justify-content-start mb-4"> <div class="img_cont_msg" style="padding-right:4px;"> <img src="assets/cover/' +
                 data.cover + '" class="rounded-circle user_img_msg"> </div><p class="msg_cotainer_send">' +
                 data.content +
                 '</p><br></div><div style="margin-top:-25px;"> <span class="uk-text-meta livestamp"> <span uk-icon="icon: clock; ratio: .7"></span> <span data-livestamp="' +
                 data.msg_date + '" style="font-size:10px;"></span> </span> </div>';
+                var myAudio = document.createElement('audio');
+        if (myAudio.canPlayType('audio/mpeg')) {
+            myAudio.setAttribute('src', 'assets/audio/ringtone.mp3');
+        }
+        myAudio.play();
 
         }
         $('#loadmessage').append(chat);
@@ -324,5 +329,6 @@
         setTimeout(() => {
             $('title').html('SKENSA-GroupChat');
         }, 1000);
+        
     });
 </script>
